@@ -22,5 +22,5 @@ jwt.verify(token,process.env.Token,async(err,data)=>{
             else return res.json({status:false})
     }
 })
-next()
+
 }

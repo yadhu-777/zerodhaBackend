@@ -38,7 +38,7 @@ app.use(express.urlencoded({extended:true}));
 app.post("/signup",Signup);
 app.post("/login",Login);
 
-app.post("/",VerifyUser);
+app.post("/verify",VerifyUser);
 
 app.get("/order",async(req,res)=>{
   const orderdetails = await order.find({})
