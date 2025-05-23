@@ -35,7 +35,8 @@ const connect =()=>mongoose.connect(url);
  app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-
+app.post("/signup",Signup);
+app.post("/login",Login);
 
 app.post("/",VerifyUser);
 
@@ -66,5 +67,4 @@ await upload.save();
 
 })
 
-app.post("/signup",Signup);
-app.post("/login",Login);
+
