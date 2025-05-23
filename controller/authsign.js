@@ -15,7 +15,7 @@ const User = await user.create({name,email,password});
 
     const token = secrettoken(User._id);
     res.cookie("token",token,{
-        httpOnly:true,
+        httpOnly:false,
      withCredentials:true
     });
     res.status(201).json({message:"user signed",success: true});
