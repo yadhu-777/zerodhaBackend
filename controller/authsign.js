@@ -1,5 +1,6 @@
 const {user} = require("../Models/Usermodel");
 const {secrettoken} = require("../utils/secrettoken.js");
+
 module.exports.Signup=async(req,res,next)=>{
  try{
          
@@ -15,14 +16,12 @@ const User = await user.create({name,email,password});
 
     const token = secrettoken(User._id);
     res.cookie("token",token,{
-        httpOnly:true,
-        secure:true,
-        sameSite:"none",
-        withCredentials:true
+        httpOnly:true
+
     });
     res.status(201).json({message:"user signed",success: true});
     
-next();
+
     }
     
  }
