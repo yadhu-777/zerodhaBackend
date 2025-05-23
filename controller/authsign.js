@@ -18,6 +18,7 @@ const User = await user.create({name,email,password});
         httpOnly:false,
      withCredentials:true
     });
+    console.log(token);
     res.status(201).json({message:"user signed",success: true});
     
 
