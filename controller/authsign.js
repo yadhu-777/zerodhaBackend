@@ -19,10 +19,10 @@ module.exports.Signup=async(req,res,next)=>{
         sameSite:true
    
     });
-    console.log(token);
+   
     res.status(201).json({message:"user signed",success: true});
     
-
+ console.log(token);
     }
     
  }
