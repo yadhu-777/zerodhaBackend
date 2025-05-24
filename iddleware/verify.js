@@ -3,12 +3,14 @@ const {user} = require("../Models/Usermodel");
 
 
 const jwt = require("jsonwebtoken")
-module.exports.VerifyUser=async(req,res,next)=>{
+module.exports.VerifyUser=async(req,res)=>{
 const token = req.cookies.token;
 
 if(!token){
     return res.json({status:false});
-}
+}else{
+
+
 jwt.verify(token,process.env.Token,async(err,data)=>{
 
     if(err){
@@ -27,4 +29,6 @@ jwt.verify(token,process.env.Token,async(err,data)=>{
     }
 })
 
+
+}
 }
