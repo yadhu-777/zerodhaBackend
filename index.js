@@ -13,7 +13,7 @@ const {order}= require ("./Models/OrderModel");
 const {user} = require("./Models/Usermodel");
 const {VerifyUser} = require("./iddleware/verify");
 const cookieParser = require("cookie-parser");
-const Port = process.env.Port || 3000;
+const Port = process.env.Port ;
 const link1 = process.env.Link1;
 const link2 = process.env.Link2;
 app.listen(Port,()=>{
@@ -35,7 +35,7 @@ const connect =()=>mongoose.connect(url);
  app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-app.post("/signup",Signup);
+app.post("/Signup",Signup);
 app.post("/login",Login);
 
 app.post("/verify",VerifyUser);

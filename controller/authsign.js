@@ -11,11 +11,12 @@ module.exports.Signup=async(req,res,next)=>{
         return res.json({message:"user already exist"});
        
     }else{
-const User = await user.create({name,email,password});
+      const User = await user.create({name,email,password});
 
     const token = secrettoken(User._id);
     res.cookie("token",token,{
-        httpOnly:true
+        httpOnly:true,
+        sameSite:true
    
     });
     console.log(token);
@@ -28,6 +29,5 @@ const User = await user.create({name,email,password});
  catch(err){
     console.log(err);
  }
- next();
 
 }
