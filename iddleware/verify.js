@@ -14,7 +14,7 @@ if(!token){
 jwt.verify(token,process.env.Token,async(err,data)=>{
 
     if(err){
-          console.log(err);
+          console.log(err,"dlld");
         return res.json({status:false});
       
     }
