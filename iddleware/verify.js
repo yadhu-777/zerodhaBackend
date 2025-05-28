@@ -14,7 +14,9 @@ if(!token){
 jwt.verify(token,process.env.Token,async(err,data)=>{
 
     if(err){
+          console.log(err);
         return res.json({status:false});
+      
     }
     else{
         const User = await user.findById(data.id);
