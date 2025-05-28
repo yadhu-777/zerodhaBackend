@@ -22,7 +22,7 @@ jwt.verify(token,process.env.Token,async(err,data)=>{
         const User = await user.findById(data.id);
        
         if (User) {
-            console.log("came");
+           
              res.json({status:true,user:User.name,email:User.email})
         }
              else {
